@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<title>
+   Aasiyah Feisal
+</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="jumbotron heading">
+  <h1 class="display-4 eightBall">MAGIC EIGHT BALL</h1>
+  <p class="lead description ">A magic eight ball is a mystical tool used by fortune tellers to predict the future and answer any question you could ever think to have. And now, you can harness this power with just the click of a button. Ask any question you wish: </p>
+  <hr class="my-0 line">
+</div>
+
+<section class="stage">
+  <figure class="ball">
+    <span class="shadow"></span>
+    <span class="eight"></span>
+    <span class="triangle"></span>
+  </figure>
+</section>
+
+<div class="input-group mb-3 inputBar">
+  <input type="text" id="Qanswer" class="form-control" placeholder="Enter question for the ball here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary askBtn" type="button">Ask!</button>
+  </div>
+</div>
+
+</body>
+
+<style>
+  .ball:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  /*.ball .triangle {
+    width: 100px;
+    height: 100px;
+    border-top-width: 120px;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-width: 120px;
+    border-right-style: solid;
+    border-right-color: blue;
+
+    margin: 30%;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 45px;
+
+    transform: rotate(45deg) scale(1.5, 1.5);
+  }*/
+
+  .ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+  }
+  .ball:before {
+    content: "";
+    position: absolute;
+    background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    bottom: 2.5%;
+    left: 5%;
+    opacity: 0.6;
+    height: 100%;
+    width: 90%;
+    -webkit-filter: blur(5px);
+    z-index: 2;
+  }
+  .ball:after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+    -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+    -moz-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+    -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+    -o-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+    transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+    -webkit-filter: blur(10px);
+  }
+  .ball .eight {
+    width: 150px;
+    height: 150px;
+    margin: 30%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 75px;
+    margin-top: 75px;
+  }
+  .ball .eight:before {
+    content: "8";
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 80px;
+    width: 100px;
+    left: 50px;
+    margin-left: -25px;
+    top: 44px;
+    margin-top: -23px;
+    color: black;
+    font-family: Arial;
+    font-size: 90px;
+    line-height: 104px;
+  }
+
+  .stage {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin: 20px;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    -o-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+  }
+</style>
+
+<script>
+  var replies = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don't count on it", "My reply is no", "My sources say no", "Outlook no so good", "Very doubtfull"];
+
+  var generateAns = function() {
+      // create funtion to generate random answer
+      var $answer = $("#Qanswer");
+      var answer = $answer.val();
+      $(".eightBall").text(answer);
+      $(".description").hide();
+      $(".line").hide();
+      $(".inputBar").hide();
+
+      var randomNum = Math.floor(Math.random() * 20);
+      var ballAns = replies[randomNum];
+      $(".description").text(ballAns);
+      $(".description").show();
+  };
+
+  $(".askBtn").on("click", function() {
+      generateAns();
+  });
+</script>
+
+</html>
