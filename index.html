@@ -1,38 +1,48 @@
 <!doctype html>
 <html>
+
 <head>
-<title>
-   Aasiyah Feisal
-</title>
+  <title>
+     Aasiyah Feisal
+  </title>
+  <!-- Link to bootstrap css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!-- Link to jQuery javascript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Link to libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <!-- Link to bootstrap javascript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <!-- Link to javascript code with jQuery -->
   <script src="script.js"></script>
+  <!-- Link to style css sheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="jumbotron heading">
-  <h1 class="display-4 eightBall">MAGIC EIGHT BALL</h1>
-  <p class="lead description">A magic eight ball is a mystical tool used by fortune tellers to predict the future and answer any question you could ever think to have. And now, you can harness this power with just the click of a button. </p>
-  <h5 class="display-10 askMe"> Ask any question you wish: </p>
-  <hr class="my-0 line">
-</div>
-
-<section class="stage">
-  <figure class="ball">
-    <span class="shadow"></span>
-    <span class="eight"></span>
-    <span class="triangle"></span>
-  </figure>
-</section>
-
-<div class="input-group mb-3 inputBar">
-  <input type="text" id="Qanswer" class="form-control" placeholder="Enter question for the ball here" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary askBtn" type="button">Ask!</button>
+  <!-- Header which provides a description of a magic eight ball -->
+  <div class="jumbotron heading">
+    <h1 class="display-4 eightBall">MAGIC EIGHT BALL</h1>
+    <p class="lead description">A magic eight ball is a mystical tool used by fortune tellers to predict the future and answer any question you could ever think to have. And now, you can harness this power with just the click of a button. </p>
+    <h5 class="display-10 askMe"> Ask any question you wish: </p>
+    <hr class="my-0 line">
   </div>
-</div>
+
+  <!-- Setup fpr the magic eight ball -->
+  <section class="stage">
+    <figure class="ball">
+      <span class="eight"></span>
+      <span class="triangle"></span>
+    </figure>
+  </section>
+
+  <!-- Input bar to ask the magic eight ball a question -->
+  <div class="input-group mb-3 inputBar">
+    <input type="text" id="Qanswer" class="form-control" placeholder="Enter question for the ball here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary askBtn" type="button">Ask!</button>
+    </div>
+  </div>
 </body>
 
 </html>
