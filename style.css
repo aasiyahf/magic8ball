@@ -20,23 +20,32 @@
 }
 
 /* Triangle for answers by magic eight ball */
-/*.ball .triangle {
-  width: 100px;
-  height: 100px;
-  border-top-width: 120px;
-  border-top-style: solid;
-  border-top-color: transparent;
-  border-right-width: 120px;
-  border-right-style: solid;
-  border-right-color: blue;
+#answer {
+  width: 140px;
+  height: 120px;
+  position: relative;
+  left: 79px;
+  top: 115px;
+  display: none;
+}
 
-  margin: 30%;
+/* Triangle for answers by magic eight ball */
+/* #triangle {
   position: absolute;
-  margin-left: 90px;
-  margin-top: 45px;
+}
 
-  transform: rotate(45deg) scale(1.5, 1.5);
-}*/
+#triSpace {
+  position: absolute;
+} */
+
+#triangle {
+  width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid blue;
+  color: white;
+}
 
 /* Creates ball shape with on-dimensional gradient */
 .ball {
@@ -85,13 +94,13 @@
 
 /* Creates space for eight symbol on ball */
 .ball .eight {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   margin: 30%;
   background: white;
   border-radius: 50%;
   position: absolute;
-  margin-left: 75px;
+  margin-left: 70px;
   margin-top: 75px;
 }
 
@@ -104,8 +113,8 @@
   height: 80px;
   width: 100px;
   left: 50px;
-  margin-left: -25px;
-  top: 44px;
+  margin-left: -20px;
+  top: 50px;
   margin-top: -23px;
   color: black;
   font-family: Arial;

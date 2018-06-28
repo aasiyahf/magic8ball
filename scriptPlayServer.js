@@ -3,7 +3,7 @@ var replies = ["It is certain", "It is decidedly so", "Without a doubt", "Yes de
 
 // Function which refreshes the page in order to reshow the question asked and display an answer
 var generateAns = function() {
-  // create funtion to generate random answer
+  // store the question asked to print out when page is reloaded
   var $answer = $("#Qanswer");
   var answer = $answer.val();
   // make ball show answer
@@ -15,19 +15,33 @@ var generateAns = function() {
   $(".inputBar").hide();
   $(".askMe").hide();
 
+/*
   // Generate a random number from 0-19
-  var randomNum = Math.floor(Math.random() * 20) + 1;
+  var randomNum = Math.floor(Math.random() * 20);
   // retrieve answer at index of random number
-  var ballAns = "ans" + randomNum + ".png"
+  var ballAns = replies[randomNum];
+*/
+
+  var ballAns
   // Crate appropriate message if no question was typed
   if (answer === "") {
     ballAns = "Reload the page to enter a question."
     $(".description").text(ballAns);
     $(".description").show();
   } else {
-    $(".ball .eight").css("background","black");
-    $("#answer").attr("src",ballAns);
-    $("#answer").show();
+    $.ajax({
+      url: "http://localhost:3000/answer",
+      data: {
+        zipcode: 97201
+      },
+      success: function( result ) {
+        ballAns = result
+        console.log("Got answer: ", ballAns)
+        $(".ball .eight").css("background","black");
+        $("#answer").attr("src",ballAns);
+        $("#answer").show();
+      }
+    });
   }
 };
 
@@ -38,30 +52,8 @@ var generateAns = function() {
 //     });
 // });
 
-
-
 // Refresh page and show answer to question asked for magic eight ball
 $(function(){
-  // var canvas = document.getElementById('triangle');
-  // var context = canvas.getContext('2d');
-  //
-  // context.beginPath();
-  // context.moveTo(78, 120);
-  // context.lineTo(223, 120);
-  // context.lineTo(150, 235);
-  //
-  // context.closePath();
-  //
-  // context.fillStyle = "rgb(25, 25, 112)";
-  // context.fill();
-  //
-  // var canvas2 = document.getElementById('triSpace');
-  // var context2 = canvas.getContext('2d');
-  //
-  // context2.fillStyle = "white";
-  // context2.fillText(replies[0], 130, 150);
-
-
   $(".askBtn").on("click", function() {
     generateAns();
   });
