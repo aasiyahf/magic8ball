@@ -24,30 +24,31 @@
   width: 140px;
   height: 120px;
   position: relative;
-  left: 79px;
+  /* left: 79px; */
   top: 115px;
-  display: none;
 }
 
-/* Triangle for answers by magic eight ball */
-/* #triangle {
-  position: absolute;
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    display: none;
 }
 
-#triSpace {
-  position: absolute;
-} */
-
-#triangle {
-  width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 100px solid blue;
-  color: white;
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    top: 156px;
+    padding: 32px;
 }
 
-/* Creates ball shape with on-dimensional gradient */
+/* Creates ball shape with one-dimensional gradient */
 .ball {
   display: inline-block;
   width: 100%;
@@ -55,8 +56,11 @@
   margin: 0;
   border-radius: 50%;
   position: relative;
-  left: 50%;
   background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+}
+
+#position {
+  margin: auto;
 }
 
 /* Creates a lighter highlight, starting at the bottom of the ball and creates the effect of reflected light from the surface. */
