@@ -1,1 +1,1 @@
-# magiceightball.github.io
+# magiceightball
