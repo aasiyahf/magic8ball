@@ -3,44 +3,33 @@ var replies = ["It is certain", "It is decidedly so", "Without a doubt", "Yes de
 
 // Function which refreshes the page in order to reshow the question asked and display an answer
 var generateAns = function() {
-  // create funtion to generate random answer
-  var $answer = $("#Qanswer");
+  // Load answer to check from input bar
+  var $answer = $("#questionBar");
   var answer = $answer.val();
-  // make ball show answer
-  $(".eightBall").text(answer);
-  // hide description to change it
-  $(".description").hide();
-  // hide other visual parts of header unnecessary to answer
-  $(".line").hide();
-  $(".inputBar").hide();
-  $(".askMe").hide();
 
   // Generate a random number from 0-19
   var randomNum = Math.floor(Math.random() * 20) + 1;
   // retrieve answer at index of random number
   var ballAns = replies[randomNum]
-  // Crate appropriate message if no question was typed
-  if (answer === "") {
-    ballAns = "Reload the page to enter a question."
-    $(".description").text(ballAns);
-    $(".description").show();
-  } else {
-    $(".ball .eight").css("background","black");
-    $(".centered").text(ballAns);
-    $(".container").show();
-  }
-};
 
-// // Refresh page and show answer to question asked for magic eight ball
-// $(function(){
-//     $(".askBtn").click(function() {
-//         generateAns();
-//     });
-// });
+  // Create appropriate message if no question was typed
+  if (answer === "") {
+    $("#prompt").text("You forgot to type a question!");
+  } else {
+    $("#prompt").text("Your question has been answered!");
+    $("#eight").css("background","#000D1A");
+    $("#eight").css("border","1px solid white");
+    $("#answer").text(ballAns);
+    $("#questionBar").val("");
+    $("#triAns").show();
+  }
+
+  $("#askBtn").text("Ask Again");
+};
 
 // Refresh page and show answer to question asked for magic eight ball
 $(function(){
-  $(".askBtn").on("click", function() {
+  $("#askBtn").on("click", function() {
     generateAns();
   });
 });

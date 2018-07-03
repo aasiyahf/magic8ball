@@ -1,5 +1,18 @@
+/* Creates a ball with shading to look realistic */
+#ball {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: black;
+  border-radius: 100%;
+  height: 300px;
+  width: 300px;
+  background: radial-gradient(circle at 100px 100px, white, black, black, black, black);
+}
+
 /* Creates a hover effect when mouse is over magic eight ball */
-.ball:hover {
+#ball:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
 }
@@ -19,8 +32,16 @@
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/* Container holding the image and the text */
+#triAns {
+    position: relative;
+    text-align: center;
+    color: white;
+    display: none;
+}
+
 /* Triangle for answers by magic eight ball */
-#answer {
+#triangle {
   width: 140px;
   height: 120px;
   position: relative;
@@ -28,16 +49,40 @@
   top: 115px;
 }
 
-/* Container holding the image and the text */
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
-    display: none;
+/* Creates space for eight symbol on ball */
+#eight {
+  width: 160px;
+  height: 160px;
+  margin: 30%;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 70px;
+  margin-top: 75px;
+  border: 1px solid black;
+  border-width: thick;
+}
+
+/* Formats space and positioning for eight symbol on ball */
+#eight:before {
+  content: "8";
+  display: block;
+  position: absolute;
+  text-align: center;
+  height: 80px;
+  width: 100px;
+  left: 50px;
+  margin-left: -25px;
+  top: 45px;
+  margin-top: -20px;
+  color: black;
+  font-family: Arial;
+  font-size: 90px;
+  line-height: 104px;
 }
 
 /* Centered text */
-.centered {
+#answer {
     position: absolute;
     top: 50%;
     bottom: auto;
@@ -48,98 +93,5 @@
     padding: 32px;
 }
 
-/* Creates ball shape with one-dimensional gradient */
-.ball {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
-}
-
-#position {
-  margin: auto;
-}
-
-/* Creates a lighter highlight, starting at the bottom of the ball and creates the effect of reflected light from the surface. */
-.ball:before {
-  content: "";
-  position: absolute;
-  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-  bottom: 2.5%;
-  left: 5%;
-  opacity: 0.6;
-  height: 100%;
-  width: 90%;
-  -webkit-filter: blur(5px);
-  z-index: 2;
-}
-
-/* Creates a circular gradient that makes it look like light is reflecting off a three dimensional object */
-.ball:after {
-  width: 100%;
-  height: 100%;
-  content: "";
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
-  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  -moz-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  -o-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  -webkit-filter: blur(10px);
-}
-
-/* Creates space for eight symbol on ball */
-.ball .eight {
-  width: 160px;
-  height: 160px;
-  margin: 30%;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 75px;
-}
-
-/* Formats space and positioning for eight symbol on ball */
-.ball .eight:before {
-  content: "8";
-  display: block;
-  position: absolute;
-  text-align: center;
-  height: 80px;
-  width: 100px;
-  left: 50px;
-  margin-left: -20px;
-  top: 50px;
-  margin-top: -23px;
-  color: black;
-  font-family: Arial;
-  font-size: 90px;
-  line-height: 104px;
-}
-
-/* Create stage for ball to be drawn */
-.stage {
-  width: 300px;
-  height: 300px;
-  display: inline-block;
-  margin: 20px;
-  -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
-  -ms-perspective: 1200px;
-  -o-perspective: 1200px;
-  perspective: 1200px;
-  -webkit-perspective-origin: 50% 50%;
-  -moz-perspective-origin: 50% 50%;
-  -ms-perspective-origin: 50% 50%;
-  -o-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
+#askBtn:hover {
 }

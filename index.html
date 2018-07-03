@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <!-- Link to jQuery javascript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <!-- Link to libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <!-- Link to bootstrap javascript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <!-- Link to javascript code with jQuery -->
@@ -20,34 +18,33 @@
 </head>
 
 <body>
-  <!-- Header which provides a description of a magic eight ball -->
-  <div class="jumbotron heading">
-    <h1 class="display-4 eightBall">MAGIC EIGHT BALL</h1>
-    <p class="lead description">A magic eight ball is a mystical tool used by fortune tellers to predict the future and answer any question you could ever think to have. And now, you can harness this power with just the click of a button. </p>
-    <h5 class="display-10 askMe"> Ask any question you wish: </p>
-    <hr class="my-0 line">
+  <div class="row align-items-center">
+
+    <!-- Header which provides a description of a magic eight ball -->
+    <div class="col-6 jumbotron">
+      <h1 class="display-4">MAGIC EIGHT BALL</h1>
+      <p class="lead">A magic eight ball is a mystical tool used by fortune tellers to predict the future and answer any question you could ever think to have. </p>
+      <h5 class="display-10" id="prompt"> Ask any question you wish: </p>
+    </div>
+
+    <!-- Setup for the magic eight ball -->
+    <div class="col-6">
+        <figure id="ball">
+          <span id="eight"></span>
+          <div id="triAns">
+            <img id="triangle" src="triangle.png" alt="Your life is irrelevant." />
+            <div id="answer">No</div>
+          </div>
+        </figure>
+    </div>
   </div>
-
-  <!-- Setup fpr the magic eight ball -->
-  <div id="position">
-    <section class="stage">
-      <figure class="ball">
-        <span class="eight"></span>
-        <div class="container">
-          <img id="answer" src="triangle.png" alt="Your life is irrelevant." />
-          <div class="centered">No</div>
-        </div>
-      </figure>
-    </section>
-  </div>
-
-
-
-  <!-- Input bar to ask the magic eight ball a question -->
-  <div class="input-group mb-3 inputBar">
-    <input type="text" id="Qanswer" class="form-control" placeholder="Enter question for the ball here" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary askBtn" type="button">Ask!</button>
+  <div class="row">
+    <!-- Input bar to ask the magic eight ball a question -->
+    <div class="container input-group mb-3" id="inputBar">
+      <input type="text" id="questionBar" class="form-control" placeholder="Enter question for the ball here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" id="askBtn" type="button">Ask!</button>
+      </div>
     </div>
   </div>
 </body>
