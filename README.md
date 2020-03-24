@@ -1,6 +1,6 @@
 # MagicEightBall
 
-This is a basic implementation of a popular kids toy - a magic eight ball! You can visit the site [here](https://aasiyahf.github.io/magiceightball/)! 
+This is a basic implementation of a popular children's toy - a magic eight ball! You can visit the site [here](https://aasiyahf.github.io/magiceightball/)! 
    
    
  <p align="center">
